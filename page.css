@@ -377,7 +377,7 @@
 
 #containerContactUs{
     margin-block-start: 3rem;
-    background-image: url(./images/contactImg.jpg);
+    background-image: url("./images/contactImg.jpg");
     background-size: cover;
     background-position: center;
     padding: 2rem;
