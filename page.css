@@ -405,17 +405,6 @@
     background: var(--colorMain);
     border: 2px solid white;
 }
-/*.blockContact .saperator span{
-    display: block;
-    position: relative;
-    top: 50%;
-    transform: translate(-45%, 0%);
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: var(--colorMain);
-    border: 2px solid white;
-}*/
 .blockContact>h1{
     text-align: center;
     font-family: var(--fontMplus);
@@ -494,9 +483,13 @@
     border: 2px solid var(--colorMain);
     color: var(--colorMain);
     border-radius: 20px;
+    font-weight: 600;
 }
+
 .boxForm>form button:hover{
-    background-position: right center;
+    border: 2px solid white;
+    color: white;
+    background: var(--colorMain);
 }
 
 @media screen and (max-width:700px) {
@@ -519,5 +512,10 @@
     .blockContact .saperator::after{
         transform: translate(0%, -45%);
         margin-inline: auto;
+    }
+}
+@media screen and (max-width:500px){
+    .boxForm>form input, .boxForm>form label, .boxForm>form textarea, .boxForm>form button {
+        width: 90%;
     }
 }
