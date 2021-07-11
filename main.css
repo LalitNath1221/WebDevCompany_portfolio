@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;500&family=Roboto:wght@300;400&display=swap');
+/*
+    font-family: 'M PLUS Rounded 1c', sans-serif; 3,4
+    font-family: 'Roboto', sans-serif;3,5
+*/
+/*VARIABLES*/
+:root{
+    --fontRoboto : 'Roboto', sans-serif;
+    --fontMplus : 'M PLUS Rounded 1c', sans-serif;
+    --colorMain : #3264f5;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    background-color: white;
+}
+/*NAVIGATION MENU STYLE STARTS HERE*/
+.navigation{
+    display: flex;
+    background-color: var(--colorMain);
+    color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    z-index: 2;
+}
+.navContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#siteMainHeading{
+    font-family: var(--fontRoboto);
+    margin-inline: 20px;
+}
+.navContainer .navMenu{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+.navItem{
+    padding: 10px 10px;
+    margin-inline: 15px;
+}
+.navLink{
+    text-decoration: none;
+    color: white;
+    font-family: var(--fontRoboto);
+    font-size: 18px;
+}
+#menuBtn{
+    position: relative;
+    min-width: 25px;
+    height: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin-inline: 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+#menuBtn::before{
+    content: '';
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    background-color: white;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 0 white;
+    transition: .3s ease-in-out;
+    }
+#menuBtn::after{
+    content: '';
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    background-color: white;
+    transform: translateY(8px);
+    transition: .3s ease-in-out;
+    }
+    #menuBtn.activeMenuBtn::before{
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 white;
+}
+#menuBtn.activeMenuBtn::after{
+    transform: translateY(0px) rotate(-45deg);
+}
+@media screen and (max-width:800px){
+    .navigation{
+        display: block;
+        flex-direction: column;
+    }
+    .navContainer {
+        display: flex;
+    }
+    .navContainer .navMenu {
+        display: block;
+        list-style: none;
+        padding: 0%;
+    }
+    #navMenuContainer{
+        height: 0px;
+        overflow: hidden;
+        transition: .4s ease-in-out;
+    }
+    #navMenuContainer.activenavMenuContainer{
+        height: 250px;
+    }
+    .navItem {
+        text-align: center;
+    }
+    #menuBtn{
+        display: flex;
+    }
+}
+/*NAVIGATION MENU STYLE ENDS HERE*/
+
+/*FOOTER STYLE STARTS HERE*/
+footer{
+    background-color: var(--colorMain);
+    padding-block: 2rem;
+}
+footer h1,footer h3{
+    font-family: var(--fontRoboto);
+    color: white;
+    text-align: center;
+    margin: 0%;
+}
+footer div{
+    display: flex;
+    justify-content: center;
+    padding-block-start: 1rem;
+}
+footer div a{
+    all: unset;
+}
+footer div a img{
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    margin: 10px;
+    width: 25px;
+    filter: invert(1);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+footer div a img:hover{
+    transform: translateY(-10px);
+}
+/*FOOTER STYLE ENDS HERE*/
+
+/*COMMON CLASSES STYLE STARTS HERE*/
+.fontRoboto{
+    font-family: 'Roboto', sans-serif;
+}
+.fontMplus{
+    font-family: 'M PLUS Rounded 1c', sans-serif;;
+}
+.bgMain{
+    background-color: #3264f5;
+}
+.colorMain{
+    color: #3264f5;
+}
+.colorWhite{
+    color: white;
+}
+.flex{
+    display: flex;
+}
+.flexC{
+    display: flex;
+    flex-direction: column;
+}
+.alignMid{
+    justify-content: center;
+    align-items: center;
+}
+.margin_1{
+    margin: 1rem;
+}
+.margin_2{
+    margin: 2rem;
+}
+.padding_1{
+    padding: 1rem;
+}
+.padding_2{
+    padding: 2rem;
+}
+.textCenter{
+    text-align: center;
+}
+.scrollDownAnimation{
+    color: white;
+    position: relative;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.scrollDownAnimation span{
+    width: 40px;
+    height: 40px;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    transform: rotatez(44deg) translate(-20px,-20px);
+    animation: AnimScroll 2s infinite;
+    position: relative;
+    margin: -8px;
+}
+.scrollDownAnimation span:nth-child(2){
+    animation-delay: -.2s;
+}
+.scrollDownAnimation span:nth-child(3){
+    animation-delay: -.4s;
+}
+@keyframes AnimScroll {
+    0%{
+        opacity: 0;
+        transform: rotatez(44deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotatez(44deg) translate(20px,20px);
+    }
+}
+/*COMMON CLASSES STYLE ENDS HERE*/
